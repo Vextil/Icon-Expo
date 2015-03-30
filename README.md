@@ -73,7 +73,7 @@ Details and more info in PDF or website.
 
 	The MIT License (MIT)
 
-	Copyright (c) 2015 Joaquin Cuiti
+	Copyright (c) 2015 Joaquin Cuitiño
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
