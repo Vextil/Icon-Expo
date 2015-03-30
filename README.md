@@ -58,7 +58,7 @@ The full changelog can be found [here](https://github.com/Vextil/PaperBoard/rele
 * Joaquin Cuitiño
 * Web: https://vextil.ninja
 * Mail: vextil@gmail.com
-* Google+: http://www.imdb.com/title/tt3105674/?ref_=tt_rec_tt
+* Google+: https://plus.google.com/+JoaquinCuitiñoF
 
 #Forked From
 
