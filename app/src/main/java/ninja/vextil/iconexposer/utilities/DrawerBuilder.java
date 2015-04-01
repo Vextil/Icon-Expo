@@ -67,7 +67,7 @@ public class DrawerBuilder
 
                 if (item.itemAction != null) {
 
-                    item.itemAction.action();
+                    item.itemAction.action(DrawerBuilder.this);
 
                 } else if (item.activity != null) {
 
@@ -76,17 +76,24 @@ public class DrawerBuilder
 
                 } else if (item.fragment != null) {
 
-                    ActionBarActivity activity = (ActionBarActivity) drawer.getActivity();
-                    activity.getSupportActionBar().setTitle(item.fragment.getName());
-                    FragmentTransaction tx = activity.getSupportFragmentManager().beginTransaction();
-                    tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    tx.replace(R.id.main, Fragment.instantiate(activity, item.fragment.getName()));
-                    tx.commit();
+                    openFragmentInstantly(Fragment.instantiate(
+                            drawer.getActivity(),
+                            item.fragment.getName()
+                    ));
 
                 }
             }
         });
         return drawer.build();
+    }
+
+    public void openFragmentInstantly(Fragment fragment)
+    {
+        ActionBarActivity activity = (ActionBarActivity) drawer.getActivity();
+        FragmentTransaction tx = activity.getSupportFragmentManager().beginTransaction();
+        tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        tx.replace(R.id.main, fragment);
+        tx.commit();
     }
 
     public class DrawerItem
