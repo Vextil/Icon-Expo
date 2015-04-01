@@ -89,7 +89,15 @@ public class DrawerBuilder
 
     public void openFragmentInstantly(Fragment fragment)
     {
+        openFragmentInstantly(null, fragment);
+    }
+
+    public void openFragmentInstantly(String title, Fragment fragment)
+    {
         ActionBarActivity activity = (ActionBarActivity) drawer.getActivity();
+        if (title != null) {
+            activity.getSupportActionBar().setTitle(title);
+        }
         FragmentTransaction tx = activity.getSupportFragmentManager().beginTransaction();
         tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         tx.replace(R.id.main, fragment);
