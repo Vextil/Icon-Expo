@@ -1,6 +1,5 @@
 package ninja.vextil.iconexposer.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -14,16 +13,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.vextil.iconexposer.R;
 import ninja.vextil.iconexposer.adapters.ChangelogAdapter;
 import ninja.vextil.iconexposer.fragments.Apply;
-import ninja.vextil.iconexposer.fragments.Credits;
 import ninja.vextil.iconexposer.fragments.Home;
 import ninja.vextil.iconexposer.fragments.Previews;
 import ninja.vextil.iconexposer.fragments.Request;
 import ninja.vextil.iconexposer.fragments.Wallpapers;
 import ninja.vextil.iconexposer.utilities.DrawerBuilder;
+import ninja.vextil.iconexposer.utilities.DrawerItemActionInterface;
 import ninja.vextil.iconexposer.utilities.Preferences;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
@@ -108,10 +108,20 @@ public class Main extends ActionBarActivity {
         // Divider
         drawer.divider();
 
-        // About the App
+        // About
         drawer.item(new SecondaryDrawerItem()
             .withName(thaCredits)
-        ).opensFragment(Credits.class);
+        ).doesAction(new DrawerItemActionInterface()
+        {
+            @Override
+            public void action(DrawerBuilder builder)
+            {
+                builder.openFragmentInstantly(new Libs.Builder()
+                        .withFields(R.string.class.getFields())
+                        .fragment()
+                );
+            }
+        });
 
         drawerResult = drawer.build();
 
