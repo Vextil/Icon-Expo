@@ -120,8 +120,10 @@ public class Main extends ActionBarActivity {
                     thaCredits,
                     new Libs.Builder()
                         .withAboutIconShown(true)
-                        .withAboutVersionShown(true)
-                        .withAboutDescription("This is a small sample which can be set in the about my app description file.<br /><b>You can style this with html markup :D</b>")
+                        .withAboutAppName("Built with " + getResources()
+                                .getString(R.string.library_IconExposer_libraryName) )
+                        .withAboutDescription(getResources()
+                                .getString(R.string.library_IconExposer_libraryDescription))
                         .withFields(R.string.class.getFields())
                         .withLicenseShown(true)
                         .fragment()
