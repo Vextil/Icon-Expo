@@ -31,6 +31,12 @@ public class DrawerBuilder
         return this;
     }
 
+    public void doesAction(DrawerItemActionInterface itemAction)
+    {
+        drawerItem.itemAction = itemAction;
+        addItemToList();
+    }
+
     public void opensActivity(Class activity)
     {
         drawerItem.activity = activity;
@@ -81,6 +87,7 @@ public class DrawerBuilder
 
     public class DrawerItem
     {
+        DrawerItemActionInterface itemAction;
         Class activity;
         Class fragment;
         IDrawerItem iDrawerItem;
