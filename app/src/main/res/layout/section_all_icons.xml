@@ -10,7 +10,7 @@
         tools:context="com.jahirfiquitiva.paperboard.activities.Main"
         >
 
-        <ninja.vextil.iconexposer.tabs.SlidingTabLayout
+        <ninja.vextil.iconexposer.views.SlidingTabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

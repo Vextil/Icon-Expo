@@ -13,7 +13,7 @@ import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import ninja.vextil.iconexposer.utils.Preferences;
+import ninja.vextil.iconexposer.utilities.Preferences;
 
 import com.vextil.iconexposer.R;
 

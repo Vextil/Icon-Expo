@@ -1,4 +1,4 @@
-package ninja.vextil.iconexposer.utils;
+package ninja.vextil.iconexposer.adapters;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -20,7 +20,8 @@ import android.widget.Toast;
 
 import com.vextil.iconexposer.R;
 import ninja.vextil.iconexposer.activities.DetailedWallpaper;
-import ninja.vextil.iconexposer.utils.JSONParser;
+import ninja.vextil.iconexposer.adapters.WallsGridAdapter;
+import ninja.vextil.iconexposer.utilities.JSONParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,9 +37,9 @@ public class Wallpapers extends Fragment
     private int mColumnCountPortrait = DEFAULT_COLUMNS_PORTRAIT;
     private static final int DEFAULT_COLUMNS_LANDSCAPE = 3;
     private int mColumnCountLandscape = DEFAULT_COLUMNS_LANDSCAPE;
-    static String NAME = "name";
+    public static String NAME = "name";
     static String AUTHOR = "author";
-    static String WALL = "wall";
+    public static String WALL = "wall";
     JSONObject jsonobject;
     JSONArray jsonarray;
     GridView mGridView;

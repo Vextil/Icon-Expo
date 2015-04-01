@@ -22,8 +22,8 @@ import android.widget.AdapterView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.vextil.iconexposer.R;
-import ninja.vextil.iconexposer.utils.ChangelogAdapter;
-import ninja.vextil.iconexposer.utils.Preferences;
+import ninja.vextil.iconexposer.adapters.ChangelogAdapter;
+import ninja.vextil.iconexposer.utilities.Preferences;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;

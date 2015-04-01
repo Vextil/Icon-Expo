@@ -1,4 +1,4 @@
-package ninja.vextil.iconexposer.fragments;
+package ninja.vextil.iconexposer.adapters;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -17,8 +17,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.vextil.iconexposer.R;
-import ninja.vextil.iconexposer.utils.PaletteTransformation;
-import static ninja.vextil.iconexposer.utils.PaletteTransformation.PaletteCallback;
+
+import ninja.vextil.iconexposer.fragments.Wallpapers;
+import ninja.vextil.iconexposer.utilities.PaletteTransformation;
+import static ninja.vextil.iconexposer.utilities.PaletteTransformation.PaletteCallback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

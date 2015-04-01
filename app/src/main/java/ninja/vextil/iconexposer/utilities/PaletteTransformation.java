@@ -1,4 +1,4 @@
-package ninja.vextil.iconexposer.utils;
+package ninja.vextil.iconexposer.utilities;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;

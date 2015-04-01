@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vextil.iconexposer.R;
-import ninja.vextil.iconexposer.tabs.SlidingTabLayout;
+import ninja.vextil.iconexposer.views.SlidingTabLayout;
 
 public class Previews extends Fragment
 {

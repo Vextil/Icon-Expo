@@ -8,8 +8,8 @@ import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
 import com.google.android.apps.muzei.api.UserCommand;
 import com.vextil.iconexposer.R;
-import ninja.vextil.iconexposer.utils.JSONParser;
-import ninja.vextil.iconexposer.utils.Preferences;
+import ninja.vextil.iconexposer.utilities.JSONParser;
+import ninja.vextil.iconexposer.utilities.Preferences;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

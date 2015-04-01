@@ -1,4 +1,4 @@
-package ninja.vextil.iconexposer.utils;
+package ninja.vextil.iconexposer.utilities;
 
 import android.util.Log;
 

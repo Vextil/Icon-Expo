@@ -1,4 +1,4 @@
-package ninja.vextil.iconexposer.tabs;
+package ninja.vextil.iconexposer.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
