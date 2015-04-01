@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+    <string name="library_version">1.0.0</string>
+
     <!-- List Of Drawer Sections -->
     <string name="section_one">Home</string>
     <string name="section_two">Icons</string>
@@ -20,7 +22,7 @@
     <string name="send_title">Send via</string>
     <string name="rate">Rate theme</string>
     <string name="sendemail">Email developer</string>
-    <string name="request_precontent">"These apps are not themed. Thanks in advance.
+    <string name="request_precontent">"Can you theme these apps please?
 
 "</string>
     <string name="changelog">See changelog</string>
@@ -72,14 +74,12 @@
     <string name="json_error_toast">"Error while downloading wallpapers info. Try again later."</string>
     <string name="share_wall">"Share Wallpaper"</string>
 
-
     <!-- Sharing wallpaper from Muzei -->
     <string name="partone">"My wallpaper for today is "</string>
     <string name="parttwo">" by "</string>
     <string name="partthree">" from "</string>
     <string name="partfour">".\n"</string>
     <string name="partfive">"Get it now at "</string>
-
 
     <!-- Some texts for Dialogs -->
     <string name="dismiss">Dismiss</string>
@@ -103,16 +103,10 @@
     <string name="download">DOWNLOAD</string>
 
     <!-- LauncherNotInstalled Dialog -->
-    <string name="lni_title">" Not Installed"</string>
-    <string name="lni_content">" is currently not installed in your device.
-Would you like to install it from Play Store?"</string>
+    <string name="lni_title">" is not installed"</string>
+    <string name="lni_content">"Would you like to install it from Play Store?"</string>
     <string name="lni_yes">Yes</string>
     <string name="lni_no">No</string>
-
-    <string name="copyright">"Copyright© 2015.
-Licensed under MIT License."</string>
-    <string name="apache_license">"Licensed under Apache 2.0 License."</string>
-    <string name="mit_license">"Licensed under MIT License."</string>
 
     <string name="ratebtn">RATE</string>
 	

@@ -114,7 +114,7 @@ public class Apply extends Fragment
     public void openInPlayStore(final Launcher launcher)
     {
         String dialogTitle = launcher.name + getResources().getString(R.string.lni_title);
-        String dialogContent = launcher.name + getResources().getString(R.string.lni_content);
+        String dialogContent = getResources().getString(R.string.lni_content);
         new MaterialDialog.Builder(context)
                 .title(dialogTitle)
                 .content(dialogContent)

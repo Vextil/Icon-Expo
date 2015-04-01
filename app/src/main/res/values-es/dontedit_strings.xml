@@ -34,7 +34,7 @@
     <string name="apply">Aplicar</string>
     <string name="set_as">"Recortar imagen y seleccionar como...</string>
     <string name="set_wall_title">"Configurar Wallpaper"</string>
-    <string name="set_wall_content">"Por favor, selecciona una opción. Te gustaría recortar la imagen? O prefieres usarla en su tamaño real?"</string>
+    <string name="set_wall_content">"Por favor, selecciona una opción. Te gustaría recortar la imagen? O prefieres usarla en su tamaño original?"</string>
     <string name="crop_wall">Recortar</string>
     <string name="set_it">Usar</string>
     <string name="save">Guardar</string>
@@ -69,9 +69,8 @@
     <string name="download">DESCARGAR</string>
 
     <!-- LauncherNotInstalled Dialog -->
-    <string name="lni_title">" No Instalado"</string>
-    <string name="lni_content">" no se encuentra instalado en tu dispositivo actualmente.
-Deseas instalarlo desde Play Store?"</string>
+    <string name="lni_title">" no instalado"</string>
+    <string name="lni_content">"Deseas instalarlo desde Play Store?"</string>
     <string name="lni_yes">Si</string>
 
     <string name="installed">Instalado</string>
