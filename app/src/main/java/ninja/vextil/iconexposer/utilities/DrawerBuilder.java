@@ -65,7 +65,11 @@ public class DrawerBuilder
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
                 DrawerItem item = drawerItems.get(i);
 
-                if (item.activity != null) {
+                if (item.itemAction != null) {
+
+                    item.itemAction.action();
+
+                } else if (item.activity != null) {
 
                     Intent intent = new Intent(drawer.getActivity(), item.activity);
                     drawer.getActivity().startActivity(intent);
