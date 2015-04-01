@@ -52,11 +52,6 @@ public class Wallpapers extends Fragment
     private int mColumnCount;
     private int numColumns = 1;
 
-    public static Fragment newInstance(Context context)
-    {
-        return new Wallpapers();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {

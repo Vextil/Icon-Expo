@@ -69,11 +69,6 @@ public class Apply extends Fragment
             R.drawable.l_tsf
     };
 
-    public static Fragment newInstance(Context context)
-    {
-        return new Apply();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {

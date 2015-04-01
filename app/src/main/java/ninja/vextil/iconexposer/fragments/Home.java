@@ -16,12 +16,6 @@ import com.vextil.iconexposer.R;
 
 public class Home extends Fragment
 {
-
-    public static Fragment newInstance(Context context)
-    {
-        return new Home();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {

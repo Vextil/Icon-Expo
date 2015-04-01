@@ -18,12 +18,6 @@ import com.vextil.iconexposer.R;
 
 public class Credits extends Fragment
 {
-
-    public static Fragment newInstance(Context context)
-    {
-        return new Credits();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
