@@ -433,7 +433,7 @@ public class Apply extends Fragment
                     .show();
             startActivity(intent);
         } else {
-            goToPlay(GO_LAUNCHER);
+            openInPlayStore(GO_LAUNCHER);
         }
     }
 
@@ -447,7 +447,7 @@ public class Apply extends Fragment
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            goToPlay(HOLO_LAUNCHER);
+            openInPlayStore(HOLO_LAUNCHER);
         }
 
     }
@@ -463,7 +463,7 @@ public class Apply extends Fragment
 
         } catch (ActivityNotFoundException e) {
 
-            goToPlay(APEX_LAUNCHER);
+            openInPlayStore(APEX_LAUNCHER);
 
         }
 
@@ -481,7 +481,7 @@ public class Apply extends Fragment
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            goToPlay(NOVA_LAUNCHER);
+            openInPlayStore(NOVA_LAUNCHER);
         }
 
     }
@@ -500,7 +500,7 @@ public class Apply extends Fragment
             startActivity(smartlauncherIntent);
         } else {
 
-            goToPlay(SMART_LAUNCHER);
+            openInPlayStore(SMART_LAUNCHER);
 
         }
 
@@ -517,7 +517,7 @@ public class Apply extends Fragment
             startActivity(aviate);
         } catch (ActivityNotFoundException e) {
 
-            goToPlay(AVIATE_LAUNCHER);
+            openInPlayStore(AVIATE_LAUNCHER);
 
         }
 
@@ -533,7 +533,7 @@ public class Apply extends Fragment
             startActivity(atom);
         } catch (ActivityNotFoundException e) {
 
-            goToPlay(ATOM_LAUNCHER);
+            openInPlayStore(ATOM_LAUNCHER);
 
         }
 
@@ -550,7 +550,7 @@ public class Apply extends Fragment
             startActivity(inspireMain);
         } else {
 
-            goToPlay(INSPIRE_LAUNCHER);
+            openInPlayStore(INSPIRE_LAUNCHER);
 
         }
 
@@ -565,7 +565,7 @@ public class Apply extends Fragment
             startActivity(action);
         } else {
 
-            goToPlay(ACTION_LAUNCHER);
+            openInPlayStore(ACTION_LAUNCHER);
 
         }
 
@@ -575,7 +575,6 @@ public class Apply extends Fragment
     public void nextClick()
     {
         Intent nextApply = context.getPackageManager().getLaunchIntentForPackage("com.gtp.nextlauncher");
-
         if (nextApply != null) {
             Intent next = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
             next.putExtra("type", 1);
@@ -583,18 +582,13 @@ public class Apply extends Fragment
             context.sendBroadcast(next);
             startActivity(nextApply);
         } else {
-
-            goToPlay(NEXT_LAUNCHER);
-
+            openInPlayStore(NEXT_LAUNCHER);
         }
-
     }
-
 
     public void nineClick()
     {
         Intent nineApply = context.getPackageManager().getLaunchIntentForPackage("com.gidappsinc.launcher");
-
         if (nineApply != null) {
             Intent nine = new Intent("com.gridappsinc.launcher.action.THEME");
             nine.putExtra("iconpkg", context.getPackageName());
@@ -602,17 +596,13 @@ public class Apply extends Fragment
             context.sendBroadcast(nine);
             //Toast.makeText(context, "Click on OK to apply the Icon Pack", Toast.LENGTH_SHORT).show();
         } else {
-
-            goToPlay(NINE_LAUNCHER);
-
+            openInPlayStore(NINE_LAUNCHER);
         }
-
     }
 
     public void kkClick()
     {
         Intent kkApply = context.getPackageManager().getLaunchIntentForPackage("com.kk.launcher");
-
         if (kkApply != null) {
             Intent kk = new Intent("com.gridappsinc.launcher.action.THEME");
             kk.putExtra("com.kk.launcher.theme.EXTRA_NAME", "theme_name");
@@ -620,8 +610,7 @@ public class Apply extends Fragment
             context.sendBroadcast(kk);
             startActivity(kkApply);
         } else {
-
-            goToPlay(KK_LAUNCHER);
+            openInPlayStore(KK_LAUNCHER);
         }
     }
 
@@ -635,15 +624,13 @@ public class Apply extends Fragment
             context.sendBroadcast(lucid);
             startActivity(lucidApply);
         } else {
-
-            goToPlay(LUCID_LAUNCHER);
+            openInPlayStore(LUCID_LAUNCHER);
         }
     }
 
     public void soloClick()
     {
         Intent soloApply = context.getPackageManager().getLaunchIntentForPackage("home.solo.launcher.free");
-
         if (soloApply != null) {
             Intent solo = new Intent("home.solo.launcher.free.APPLY_THEME");
             solo.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
@@ -651,27 +638,24 @@ public class Apply extends Fragment
             context.sendBroadcast(solo);
             startActivity(soloApply);
         } else {
-
-            goToPlay(SOLO_LAUNCHER);
+            openInPlayStore(SOLO_LAUNCHER);
         }
     }
 
     public void tsfClick()
     {
         Intent tsfApply = context.getPackageManager().getLaunchIntentForPackage("com.tsf.shell");
-
         if (tsfApply != null) {
             Intent tsf = new Intent("android.intent.action.MAIN");
             tsf.setComponent(new ComponentName("com.tsf.shell", "com.tsf.shell.ShellActivity"));
             context.sendBroadcast(tsf);
             startActivity(tsfApply);
         } else {
-
-            goToPlay(TSF_LAUNCHER);
+            openInPlayStore(TSF_LAUNCHER);
         }
     }
 
-    public void goToPlay(int launcher)
+    public void openInPlayStore(int launcher)
     {
         if (launcher == 0 || launcher > 15)
             return;
@@ -742,11 +726,9 @@ public class Apply extends Fragment
                 packageName = "com.tsf.shell";
                 break;
         }
-
         final String launcherPackage = packageName;
         String dialogTitle = launcherName + getResources().getString(R.string.lni_title);
         String dialogContent = launcherName + getResources().getString(R.string.lni_content);
-
         new MaterialDialog.Builder(context)
                 .title(dialogTitle)
                 .content(dialogContent)
@@ -760,7 +742,6 @@ public class Apply extends Fragment
                         startActivity(intent);
                     }
                 }).show();
-
     }
 
 }
