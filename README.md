@@ -1,6 +1,6 @@
-#Icon Expo
+#Icon Exposer
 
-Icon Expo is an Icon Pack template which implements the Material Design guidelines in many of its components.
+Icon Exposer is an Icon Pack template which implements the Material Design guidelines in many of its components.
 Currently it works only on API 15+.
 
 #Features:
