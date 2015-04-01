@@ -74,15 +74,6 @@
 Deseas instalarlo desde Play Store?"</string>
     <string name="lni_yes">Si</string>
 
-    <string name="dashboard_author_desc">
-        <![CDATA[
-        Esta <b>Dashboard App</b> fue desarrollada por <b>Jahir Fiquitiva</b>":" Apasionado por el Diseño Gráfico y el Desarrollo para Android.
-        ]]>
-    </string>
-
-    <string name="exit">Salir</string>
-    <string name="ratebtn">CALIFICAR</string>
-
     <string name="installed">Instalado</string>
 	<string name="noninstalled">No Instalado</string>
 
