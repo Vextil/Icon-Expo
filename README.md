@@ -9,12 +9,11 @@ Currently it works only on API 15+.
 - Wallpapers can be applied, cropped-and-applied, or downloaded
 - In-App Icon Request tool
 - Previews section, where the user can see themed icons
-- License Checker
 - Changelog shown with every update
 - Apply section with 16 supported launchers
 - Credits section
 - Muzei Support
-- Requires API15+ or Android 4.0.3+
+- Requires API15+/Android 4.0.3+
 
 <b>Future features (No ETA):</b>
 - Replace GridView and ListView with RecyclerView
@@ -27,7 +26,7 @@ Currently it works only on API 15+.
 Will upload to the Play Store soon!
 
 ##Screenshots
- [Here](https://github.com/Vextil/PaperBoard/tree/master/screenshots).
+Soon.
 
 
 #Updating Guide
@@ -37,11 +36,11 @@ Will upload to the Play Store soon!
 - Add the new ones in Repository.
 - Make the changes again.
 
-The project will soon be uploaded to Maven!
+(Up to date tutorial coming soon!)
 
 ##Changelog
-Latest version changelog can be easily found [here](https://github.com/Vextil/PaperBoard/releases/latest).
-The full changelog can be found [here](https://github.com/Vextil/PaperBoard/releases).
+Latest version changelog can be easily found [here](https://github.com/Vextil/IconExposer/releases/latest).
+The full changelog can be found [here](https://github.com/Vextil/IconExposer/releases).
       
 <b>Project dependencies:</b>
 * Material Dialogs: https://github.com/afollestad/material-dialogs
