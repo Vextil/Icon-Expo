@@ -17,28 +17,31 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.vextil.iconexposer.R;
 import ninja.vextil.iconexposer.adapters.ChangelogAdapter;
+import ninja.vextil.iconexposer.fragments.Apply;
+import ninja.vextil.iconexposer.fragments.Credits;
+import ninja.vextil.iconexposer.fragments.Home;
+import ninja.vextil.iconexposer.fragments.Previews;
+import ninja.vextil.iconexposer.fragments.Request;
+import ninja.vextil.iconexposer.fragments.Wallpapers;
+import ninja.vextil.iconexposer.utilities.DrawerBuilder;
 import ninja.vextil.iconexposer.utilities.Preferences;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public class Main extends ActionBarActivity {
 
-    public Drawer.Result result = null;
-    public AccountHeader.Result headerResult = null;
+    private Drawer.Result drawerResult;
     public String thaApp, thaHome, thaPreviews, thaApply, thaWalls, thaRequest, thaCredits;
     public String version, drawerVersion;
-    public int currentItem;
     private boolean firstrun, enable_features;
     private Preferences mPrefs;
     private boolean withLicenseChecker = false;
@@ -67,9 +70,7 @@ public class Main extends ActionBarActivity {
 
         drawerVersion = "v " + getResources().getString(R.string.current_version);
 
-        currentItem = 1;
-
-        headerResult = new AccountHeader()
+        AccountHeader.Result drawerHeader = new AccountHeader()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
                 .withSelectionFirstLine(getResources().getString(R.string.app_long_name))
@@ -77,87 +78,74 @@ public class Main extends ActionBarActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        enable_features = mPrefs.isFeaturesEnabled();
-        firstrun = mPrefs.isFirstRun();
-
-        result = new Drawer()
+        DrawerBuilder drawer = new DrawerBuilder();
+        drawer.settings()
                 .withActivity(this)
                 .withToolbar(toolbar)
-                .withAccountHeader(headerResult)
+                .withAccountHeader(drawerHeader)
                 .withHeaderDivider(false)
-                .addDrawerItems(
-                        new PrimaryDrawerItem().withName(thaHome).withIcon(GoogleMaterial.Icon.gmd_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(thaPreviews).withIcon(GoogleMaterial.Icon.gmd_palette).withIdentifier(2),
-                        new PrimaryDrawerItem().withName(thaApply).withIcon(GoogleMaterial.Icon.gmd_loyalty).withIdentifier(3),
-                        new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName(thaCredits).withIdentifier(6)
-                )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
+                .withSavedInstance(savedInstanceState);
 
-                        if (drawerItem != null) {
+        // Home
+        drawer.item(new PrimaryDrawerItem()
+            .withName(thaHome)
+            .withIcon(GoogleMaterial.Icon.gmd_home)
+        ).opensFragment(Home.class);
 
-                            switch (drawerItem.getIdentifier()) {
-                                case 1: switchFragment(1, thaApp, "Home"); break;
-                                case 2: switchFragment(2, thaPreviews, "Previews"); break;
-                                case 3: switchFragment(3, thaApply, "Apply"); break;
-                                case 4:
-                                    ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                                    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                                    boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        // Icons
+        drawer.item(new PrimaryDrawerItem()
+            .withName(thaPreviews)
+            .withIcon(GoogleMaterial.Icon.gmd_palette)
+        ).opensFragment(Previews.class);
 
-                                    if (isConnected) {
-                                        switchFragment(4, thaWalls, "Wallpapers");
-                                    } else {
-                                        showNotConnectedDialog();
-                                    }
-                                    break;
-                                case 5: switchFragment(5, thaRequest, "Request"); break;
-                                case 6: switchFragment(6, thaCredits, "Credits"); break;
-                            }
-                        }
-                    }
-                })
-                .withSavedInstance(savedInstanceState)
-                .build();
+        // Apply
+        drawer.item(new PrimaryDrawerItem()
+            .withName(thaApply)
+            .withIcon(GoogleMaterial.Icon.gmd_loyalty)
+        ).opensFragment(Apply.class);
 
-        result.getListView().setVerticalScrollBarEnabled(false);
+        // Wallpapers
+        drawer.item(new PrimaryDrawerItem()
+            .withName(thaWalls)
+            .withIcon(GoogleMaterial.Icon.gmd_landscape)
+        ).opensFragment(Wallpapers.class);
+
+        // Request Icon
+        drawer.item(new PrimaryDrawerItem()
+            .withName(thaRequest)
+            .withIcon(GoogleMaterial.Icon.gmd_forum)
+        ).opensFragment(Request.class);
+
+        // Divider
+        drawer.divider();
+
+        // About the App
+        drawer.item(new SecondaryDrawerItem()
+            .withName(thaCredits)
+        ).opensFragment(Credits.class);
+
+        drawerResult = drawer.build();
 
         runLicenseChecker();
 
         if (savedInstanceState == null) {
-            result.setSelectionByIdentifier(1);
+            drawerResult.setSelection(0);
         }
 
-    }
-
-    private void switchFragment(int itemId, String title, String fragment)
-    {
-        currentItem = itemId;
-        getSupportActionBar().setTitle(title);
-        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-        tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        tx.replace(R.id.main, Fragment.instantiate(Main.this, "ninja.vextil.iconexposer.fragments." + fragment));
-        tx.commit();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState)
     {
-        outState = result.saveInstanceState(outState);
+        outState = drawerResult.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onBackPressed()
     {
-        if (result != null && result.isDrawerOpen()) {
-            result.closeDrawer();
-        } else if (result != null && currentItem != 1) {
-            result.setSelection(0);
-        } else if (result != null) {
-            super.onBackPressed();
+        if (drawerResult != null && drawerResult.isDrawerOpen()) {
+            drawerResult.closeDrawer();
         } else {
             super.onBackPressed();
         }
@@ -220,8 +208,8 @@ public class Main extends ActionBarActivity {
         IDrawerItem walls = new PrimaryDrawerItem().withName(thaWalls).withIcon(GoogleMaterial.Icon.gmd_landscape).withIdentifier(4);
         IDrawerItem request = new PrimaryDrawerItem().withName(thaRequest).withIcon(GoogleMaterial.Icon.gmd_forum).withIdentifier(5);
         if (enable_features) {
-            result.addItem(walls, 3);
-            result.addItem(request, 4);
+        //    drawerResult.addItem(walls, 3);
+         //   drawerResult.addItem(request, 4);
         }
     }
 
@@ -280,26 +268,6 @@ public class Main extends ActionBarActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("version", getResources().getString(R.string.current_version));
         editor.commit();
-    }
-
-    private void showNotConnectedDialog()
-    {
-        new MaterialDialog.Builder(this)
-                .title(R.string.no_conn_title)
-                .content(R.string.no_conn_content)
-                .positiveText(R.string.ok)
-                .callback(new MaterialDialog.ButtonCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-
-                        int nSelection = currentItem - 1;
-                        if (result != null) {
-                            result.setSelection(nSelection);
-                        }
-
-                    }
-                })
-                .show();
     }
 
     public void checkLicense()
