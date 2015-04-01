@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="define_IconExposer"></string>
+    <string name="library_IconExposer_author">Joaquin Cuitiño</string>
+    <string name="library_IconExposer_authorWebsite">http://vextil.ninja/</string>
+    <string name="library_IconExposer_libraryName">Icon Exposer</string>
+    <string name="library_IconExposer_libraryDescription">Icon Pack showcase application following Material Design guidelines in all of it\'s components.
+Give your users a slick looking app for your icon pack!</string>
+    <string name="library_IconExposer_libraryVersion">@string/library_version</string>
+    <string name="library_IconExposer_libraryWebsite">http://vextil.ninja/project/IconExposer</string>
+    <string name="library_IconExposer_licenseId">mit</string>
+    <string name="library_IconExposer_classPath">ninja.vextil.iconexposer</string>
+    <string name="library_IconExposer_isOpenSource">true</string>
+    <string name="library_IconExposer_repositoryLink">https://github.com/Vextil/Icon-Exposer</string>
+    <string name="library_IconExposer_year">2015</string>
+</resources>
