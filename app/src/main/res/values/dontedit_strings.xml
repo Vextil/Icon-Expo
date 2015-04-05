@@ -104,7 +104,7 @@
 
     <!-- LauncherNotInstalled Dialog -->
     <string name="lni_title">" is not installed"</string>
-    <string name="lni_content">"Would you like to install it from Play Store?"</string>
+    <string name="lni_content">"Would you like to install it from the Play Store?"</string>
     <string name="lni_yes">Yes</string>
     <string name="lni_no">No</string>
 
